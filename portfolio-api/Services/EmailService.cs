@@ -21,7 +21,7 @@ public class EmailService
         };
 
         using var smtp = new SmtpClient();
-        await smtp.ConnectAsync(_config["Smtp:Host"], 587, false);
+        await smtp.ConnectAsync(_config["Smtp:Host"], 465, true);
         await smtp.AuthenticateAsync(_config["Smtp:User"], _config["Smtp:Pass"]);
         await smtp.SendAsync(email);
         await smtp.DisconnectAsync(true);
