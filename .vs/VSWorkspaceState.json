@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\portfolio-api",
+    "\\portfolio-frontend",
+    "\\portfolio-frontend\\src",
+    "\\portfolio-frontend\\src\\app",
+    "\\portfolio-frontend\\src\\app\\services"
+  ],
+  "SelectedNode": "\\portfolio-frontend\\src\\app\\services\\contact.spec.ts",
+  "PreviewInSolutionExplorer": false
+}

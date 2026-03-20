@@ -1,0 +1,105 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\User\\Desktop\\earl-portfolio\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Desktop\\earl-portfolio\\portfolio-frontend\\src\\app\\services\\contact.spec.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:portfolio-frontend\\src\\app\\services\\contact.spec.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Desktop\\earl-portfolio\\portfolio-frontend\\src\\main.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:portfolio-frontend\\src\\main.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Desktop\\earl-portfolio\\portfolio-frontend\\src\\app\\app.spec.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:portfolio-frontend\\src\\app\\app.spec.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Desktop\\earl-portfolio\\portfolio-frontend\\src\\styles.scss||{181FE41B-5A5D-479F-9F8F-BF665F4EBC2A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:portfolio-frontend\\src\\styles.scss||{181FE41B-5A5D-479F-9F8F-BF665F4EBC2A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Desktop\\earl-portfolio\\portfolio-frontend\\src\\app\\app.scss||{181FE41B-5A5D-479F-9F8F-BF665F4EBC2A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:portfolio-frontend\\src\\app\\app.scss||{181FE41B-5A5D-479F-9F8F-BF665F4EBC2A}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "contact.spec.ts",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\earl-portfolio\\portfolio-frontend\\src\\app\\services\\contact.spec.ts",
+              "RelativeDocumentMoniker": "portfolio-frontend\\src\\app\\services\\contact.spec.ts",
+              "ToolTip": "C:\\Users\\User\\Desktop\\earl-portfolio\\portfolio-frontend\\src\\app\\services\\contact.spec.ts",
+              "RelativeToolTip": "portfolio-frontend\\src\\app\\services\\contact.spec.ts",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2026-03-20T06:44:17.379Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "main.ts",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\earl-portfolio\\portfolio-frontend\\src\\main.ts",
+              "RelativeDocumentMoniker": "portfolio-frontend\\src\\main.ts",
+              "ToolTip": "C:\\Users\\User\\Desktop\\earl-portfolio\\portfolio-frontend\\src\\main.ts",
+              "RelativeToolTip": "portfolio-frontend\\src\\main.ts",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2026-03-20T06:44:11.555Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "app.spec.ts",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\earl-portfolio\\portfolio-frontend\\src\\app\\app.spec.ts",
+              "RelativeDocumentMoniker": "portfolio-frontend\\src\\app\\app.spec.ts",
+              "ToolTip": "C:\\Users\\User\\Desktop\\earl-portfolio\\portfolio-frontend\\src\\app\\app.spec.ts",
+              "RelativeToolTip": "portfolio-frontend\\src\\app\\app.spec.ts",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2026-03-20T06:43:58.648Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "styles.scss",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\earl-portfolio\\portfolio-frontend\\src\\styles.scss",
+              "RelativeDocumentMoniker": "portfolio-frontend\\src\\styles.scss",
+              "ToolTip": "C:\\Users\\User\\Desktop\\earl-portfolio\\portfolio-frontend\\src\\styles.scss",
+              "RelativeToolTip": "portfolio-frontend\\src\\styles.scss",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002663|",
+              "WhenOpened": "2026-03-20T06:43:48.24Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "app.scss",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\earl-portfolio\\portfolio-frontend\\src\\app\\app.scss",
+              "RelativeDocumentMoniker": "portfolio-frontend\\src\\app\\app.scss",
+              "ToolTip": "C:\\Users\\User\\Desktop\\earl-portfolio\\portfolio-frontend\\src\\app\\app.scss",
+              "RelativeToolTip": "portfolio-frontend\\src\\app\\app.scss",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002663|",
+              "WhenOpened": "2026-03-20T06:43:37.861Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
