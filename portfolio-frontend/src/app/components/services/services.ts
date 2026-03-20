@@ -11,17 +11,17 @@ import { RevealDirective } from '../../directives/reveal';
 export class Services {
   services = [
     {
-      icon: '✦',
+      icon: '🄿 ',
       title: 'Photo Editing',
       desc: 'Professional retouching, color grading, and photo manipulation using Photoshop and Lightroom. From portraits to product shots.'
     },
     {
-      icon: '◈',
+      icon: '⌨️',
       title: 'Frontend Development',
       desc: 'Clean, responsive websites and web apps using HTML/CSS/JS and Angular. Pixel-perfect implementation from any design.'
     },
     {
-      icon: '◆',
+      icon: '🔗',
       title: 'UI Design',
       desc: 'Wireframes, mockups, and polished interfaces using Figma and Canva. Focused on clarity, usability, and visual appeal.'
     },

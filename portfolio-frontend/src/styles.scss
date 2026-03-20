@@ -45,8 +45,8 @@ section {
 .section-tag {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  font-size: clamp(10px, 1vw, 12px);
+  gap: 3px;
+  font-size: clamp(14px, 1vw, 2px);
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -56,8 +56,8 @@ section {
   &::before {
     content: '';
     display: block;
-    width: 20px;
-    height: 1px;
+    width: 5px;
+    height: 2px;
     background: var(--accent);
   }
 }
