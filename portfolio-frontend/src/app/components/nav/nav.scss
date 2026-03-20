@@ -13,14 +13,20 @@ nav {
 }
 
 .nav-logo {
-  
-  font-family: 'Syne', sans-serif;
-  font-weight: 800;
-  font-size: clamp(26px, 2.5vw, 120px);
-  letter-spacing: -0.02em;
-  color: var(--text);
+  display: flex;
+  align-items: center;
+}
 
-  span { color: var(--accent); }
+.logo-img {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+  filter: invert(0);
+  transition: filter 0.3s ease;
+}
+
+:root.light .logo-img {
+  filter: invert(1);
 }
 
 .nav-links {
