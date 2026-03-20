@@ -1,0 +1,118 @@
+section {
+  padding: var(--section-py) var(--section-px);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 6vw, 6rem);
+  margin-top: 2.5rem;
+  align-items: start;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contact-cta {
+  font-size: clamp(13px, 1.2vw, 15px);
+  color: var(--muted);
+  font-weight: 300;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: clamp(12px, 1vw, 14px);
+  color: var(--muted);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 12px;
+  transition: color 0.2s;
+
+  &:hover { color: var(--accent); }
+}
+
+.contact-link-icon { font-size: 14px; }
+
+.contact-link-label {
+  font-size: 11px;
+  display: block;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  input, textarea {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    padding: clamp(10px, 1.5vw, 14px) clamp(12px, 1.5vw, 16px);
+    font-size: clamp(12px, 1vw, 14px);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+
+    &::placeholder { color: var(--muted); }
+    &:focus { border-color: var(--accent); }
+  }
+
+  textarea {
+    height: clamp(100px, 12vw, 140px);
+    resize: none;
+  }
+
+  button {
+    align-self: flex-start;
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+}
+
+.success-msg {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  padding: 1.5rem;
+  font-size: clamp(13px, 1vw, 15px);
+  color: var(--accent);
+  border-radius: 2px;
+}
+
+.error-msg {
+  font-size: 12px;
+  color: #e06c6c;
+}
+
+footer {
+  border-top: 1px solid var(--border);
+  padding: 2rem var(--section-px);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: clamp(11px, 1vw, 13px);
+  color: var(--muted);
+}

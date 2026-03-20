@@ -1,0 +1,26 @@
+<section id="portfolio">
+  <div class="section-tag" reveal revealType="fade-up" [revealDelay]="0">Selected work</div>
+  <h2 reveal revealType="fade-up" [revealDelay]="100">Portfolio</h2>
+  <div class="portfolio-grid">
+    @for (work of works; track work.title; let i = $index) {
+      <div class="work-card" reveal revealType="stagger" [revealDelay]="i * 100"[revealDelay]="i * 100"
+  [class.has-link]="work.link"
+  (click)="openLink(work.link)">
+        <div class="work-thumb">
+          <img
+            [src]="work.image"
+            [alt]="work.title"
+            class="work-img"
+            (error)="onImgError($event, work.accent)"
+          />
+          <div class="work-overlay" [style.background]="work.accent + '22'"></div>
+          <div class="work-stack-badge">{{ work.stack }}</div>
+        </div>
+        <div class="work-info">
+          <div class="work-title">{{ work.title }}</div>
+          <div class="work-sub">{{ work.desc }}</div>
+        </div>
+      </div>
+    }
+  </div>
+</section>

@@ -1,0 +1,38 @@
+<section id="about">
+  <div class="section-tag" reveal revealType="fade-up" [revealDelay]="0">About me</div>
+  <h2 reveal revealType="fade-up" [revealDelay]="100">CS student.<br>Freelance creative.</h2>
+  <div class="about-grid">
+    <div class="about-left">
+      <p class="about-text" reveal revealType="fade-up" [revealDelay]="200">
+        Hey, I'm Earl — a third-year Computer Science student at the College
+        of Mary Immaculate in the Philippines. I combine technical skill with
+        a strong design eye to build things that look great and work even better.
+      </p>
+      <p class="about-text" reveal revealType="fade-up" [revealDelay]="280">
+        When I'm not coding, I'm retouching photos, building Angular apps,
+        or exploring game development in The Sandbox.
+      </p>
+      <div class="tags" reveal revealType="fade-up" [revealDelay]="360">
+        @for (tag of tags; track tag.name; let i = $index) {
+          <div class="tag" reveal revealType="stagger" [revealDelay]="i * 60">
+            <img [src]="tag.icon" [alt]="tag.name" class="tag-icon" />
+            <span>{{ tag.name }}</span>
+          </div>
+        }
+      </div>
+    </div>
+    <div class="about-right">
+      <div class="about-skills">
+        @for (skill of skills; track skill.name; let i = $index) {
+          <div class="skill-row" reveal revealType="slide-left" [revealDelay]="i * 100">
+            <span class="skill-name">{{ skill.name }}</span>
+            <div class="skill-bar">
+              <div class="skill-fill" [style.width.%]="skill.level"></div>
+            </div>
+            <span class="skill-pct">{{ skill.level }}%</span>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,13 @@
+<section id="services">
+  <div class="section-tag" reveal revealType="fade-up" [revealDelay]="0">What I do</div>
+  <h2 reveal revealType="fade-up" [revealDelay]="100">Services</h2>
+  <div class="services-grid">
+    @for (service of services; track service.title; let i = $index) {
+      <div class="service-card" reveal revealType="stagger" [revealDelay]="i * 120">
+        <div class="service-icon">{{ service.icon }}</div>
+        <div class="service-title">{{ service.title }}</div>
+        <p class="service-desc">{{ service.desc }}</p>
+      </div>
+    }
+  </div>
+</section>

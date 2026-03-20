@@ -1,0 +1,76 @@
+<section id="contact">
+  <div class="section-tag" reveal revealType="fade-up" [revealDelay]="0">Let's work together</div>
+  <h2 reveal revealType="fade-up" [revealDelay]="100">Contact</h2>
+  <div class="contact-grid">
+    <div class="contact-left" reveal revealType="slide-left" [revealDelay]="200">
+      <p class="contact-cta">
+        Have a project in mind? Whether it's a website, photo editing job,
+        or UI design — I'd love to hear about it.
+      </p>
+      <div class="contact-links">
+        <a class="contact-link" href="mailto:ejoliveros3066@gmail.com">
+          <span class="contact-link-icon">✉</span>
+          <div>
+            <span class="contact-link-label">Email</span>
+            ejoliveros3066@gmail.com@gmail.com
+          </div>
+        </a>
+        <a class="contact-link" href="https://www.fiverr.com/earl_jo" target="_blank">
+          <span class="contact-link-icon">◈</span>
+          <div>
+            <span class="contact-link-label">Fiverr</span>
+            https://www.fiverr.com/earl_jo
+          </div>
+        </a>
+        <a class="contact-link" href="https://github.com/EARLOLIVEROS?tab=repositories" target="_blank">
+          <span class="contact-link-icon">⬡</span>
+          <div>
+            <span class="contact-link-label">GitHub</span>
+            https://github.com/EARLOLIVEROS
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="contact-right" reveal revealType="slide-right" [revealDelay]="200">
+      @if (sent) {
+        <div class="success-msg">
+          Message sent! I'll get back to you soon. ✦
+        </div>
+      } @else {
+        <form class="contact-form" (ngSubmit)="onSubmit()">
+          <input
+            type="text"
+            placeholder="Your name"
+            [(ngModel)]="form.name"
+            name="name"
+            required
+          />
+          <input
+            type="email"
+            placeholder="Your email"
+            [(ngModel)]="form.email"
+            name="email"
+            required
+          />
+          <textarea
+            placeholder="Tell me about your project..."
+            [(ngModel)]="form.message"
+            name="message"
+            required
+          ></textarea>
+          @if (error) {
+            <p class="error-msg">Something went wrong. Please try again.</p>
+          }
+          <button type="submit" class="btn-primary" [disabled]="sending">
+            {{ sending ? 'Sending...' : 'Send message' }}
+          </button>
+        </form>
+      }
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>Earl · Portfolio 2026</span>
+  <span>Philippines 🇵🇭</span>
+</footer>
