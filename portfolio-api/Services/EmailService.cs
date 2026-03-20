@@ -1,29 +1,23 @@
-using MailKit.Net.Smtp;
-using MimeKit;
+using SendGrid;
+using SendGrid.Helpers.Mail;
 
 namespace portfolio_api.Services;
 
 public class EmailService
 {
     private readonly IConfiguration _config;
-
     public EmailService(IConfiguration config) => _config = config;
 
     public async Task SendAsync(string fromName, string fromEmail, string message)
     {
-        var email = new MimeMessage();
-        email.From.Add(new MailboxAddress("Portfolio Contact", _config["Smtp:From"] ?? ""));
-        email.To.Add(MailboxAddress.Parse(_config["Smtp:To"] ?? ""));
-        email.Subject = $"Portfolio message from {fromName}";
-        email.Body = new TextPart("plain")
+        var client = new SendGridClient(_config["SendGrid:ApiKey"]);
+        var msg = new SendGridMessage
         {
-            Text = $"From: {fromName} <{fromEmail}>\n\n{message}"
+            From = new EmailAddress(_config["SendGrid:From"] ?? "", "Portfolio Contact"),
+            Subject = $"Portfolio message from {fromName}",
+            PlainTextContent = $"From: {fromName} <{fromEmail}>\n\n{message}"
         };
-
-        using var smtp = new SmtpClient();
-        await smtp.ConnectAsync(_config["Smtp:Host"], 465, true);
-        await smtp.AuthenticateAsync(_config["Smtp:User"], _config["Smtp:Pass"]);
-        await smtp.SendAsync(email);
-        await smtp.DisconnectAsync(true);
+        msg.AddTo(new EmailAddress(_config["SendGrid:To"] ?? ""));
+        await client.SendEmailAsync(msg);
     }
 }
