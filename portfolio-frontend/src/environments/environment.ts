@@ -1,4 +1,4 @@
 export const environment = {
-  production: true,
-  apiUrl: 'https://your-api.railway.app'
+  production: false,
+  apiUrl: 'https://earl-portfolio-production-a3bc.up.railway.app'
 };
