@@ -75,13 +75,29 @@ h1 {
   transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   cursor: pointer;
 
-  &:hover {
-    transform: scale(1.14);
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: transparent;
+    transition: background 0.3s ease;
+    pointer-events: none;
+  }
 
+  &:hover {
+    transform: scale(1.04);
     .hero-img { filter: grayscale(0%) contrast(1.05); }
     .deco-corner-tl, .deco-corner-br { opacity: 1; }
-    .deco-ring { border-color: rgba(200,184,154,0.35); }
+    .deco-ring { border-color: rgba(255, 166, 0, 0.35); }
   }
+}
+
+:root.light .hero-img-wrapper::after {
+  background: rgba(255, 0, 0, 0.15);
+}
+
+:root.light .hero-img {
+  filter: grayscale(100%) contrast(1.2) brightness(0.5) !important;
 }
 
 .hero-img {
@@ -102,6 +118,10 @@ h1 {
   -webkit-mask-composite: source-in;
 
   &:hover { filter: grayscale(0%) contrast(1.05); }
+
+  :root.light & {
+    filter: grayscale(20%) contrast(1.1) brightness(0.85);
+  }
 }
 
 .deco { position: absolute; pointer-events: none; }
@@ -110,10 +130,10 @@ h1 {
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  border: 1px solid rgba(200, 184, 154, 0.15);
-  top: -30px;
-  right: -30px;
-  animation: spin 20s linear infinite;
+  border: 1px solid rgb(83, 82, 82);
+  top: -60px;
+  right: -60px;
+  animation: spin 30s linear infinite;
 }
 
 .deco-ring::after {
@@ -134,46 +154,66 @@ h1 {
 }
 
 .deco-dot-grid {
-  bottom: -20px;
-  left: -30px;
-  width: 80px;
-  height: 80px;
-  background-image: radial-gradient(circle, rgba(200,184,154,0.25) 1px, transparent 1px);
+  bottom: -50px;
+  left: -50px;
+  width: 90px;
+  height: 90px;
+  background-image: radial-gradient(circle, rgb(61, 59, 59) 1px, transparent 1px);
   background-size: 10px 10px;
+}
+
+:root.light .deco-dot-grid {
+  background-image: radial-gradient(circle, rgba(0, 0, 0, 0.3) 1px, transparent 1px);
 }
 
 .deco-line-h {
   width: 60px;
-  height: 1px;
-  background: linear-gradient(to right, transparent, rgba(50, 250, 0, 0.527));
+  height: 3px;
+  background: linear-gradient(to right, transparent, rgba(73, 70, 63, 0.3));
   top: 40%;
   left: -70px;
 }
 
+:root.light .deco-line-h {
+  background: linear-gradient(to right, transparent, rgb(0, 0, 0));
+}
+
 .deco-line-v {
-  width: 1px;
+  width: 3px;
   height: 60px;
-  background: linear-gradient(to bottom, transparent, rgba(84, 228, 0, 0.384));
+  background: linear-gradient(to bottom, transparent, rgba(90, 86, 80, 0.3));
   bottom: 20%;
   right: -40px;
+}
+
+:root.light .deco-line-v {
+  background: linear-gradient(to bottom, transparent, rgb(0, 0, 0));
 }
 
 .deco-corner-tl {
   width: 40px;
   height: 40px;
-  border-top: 2px solid rgba(200,184,154,0.4);
-  border-left: 2px solid rgba(200,184,154,0.4);
+  border-top: 4px solid rgba(80, 73, 59, 0.4);
+  border-left: 4px solid rgba(200,184,154,0.4);
   top: -10px;
   left: -10px;
+}
+
+:root.light .deco-corner-tl {
+  border-color: rgb(0, 0, 0);
 }
 
 .deco-corner-br {
   width: 40px;
   height: 40px;
-  border-bottom: 5px solid rgba(200,184,154,0.4);
-  border-right: 5px solid rgba(200,184,154,0.4);
+  border-bottom: 5px solid rgba(77, 70, 58, 0.4);
+  border-right: 5px solid rgba(146, 138, 122, 0.4);
   bottom: -10px;
   right: -10px;
+}
+
+:root.light .deco-corner-br {
+  border-color: black;
 }
 
 .deco-tag {
@@ -182,10 +222,14 @@ h1 {
   font-size: 10px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(200,184,154,0.5);
+  color: rgba(100, 96, 88, 0.5);
   writing-mode: vertical-rl;
   transform: rotate(180deg);
   font-family: 'DM Sans', sans-serif;
+}
+
+:root.light .deco-tag {
+  color: rgb(0, 0, 0);
 }
 
 .deco-badge {
@@ -194,12 +238,17 @@ h1 {
   font-size: 10px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(0, 255, 64, 0.411);
+  color: rgba(116, 109, 96, 0.4);
   border: 1px solid rgba(200,184,154,0.15);
   padding: 4px 8px;
   border-radius: 2px;
   font-family: 'DM Sans', sans-serif;
   white-space: nowrap;
+}
+
+:root.light .deco-badge {
+  color: rgb(0, 0, 0);
+  border-color: rgb(0, 0, 0);
 }
 
 .hero-strip {

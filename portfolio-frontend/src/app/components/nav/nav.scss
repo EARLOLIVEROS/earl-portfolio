@@ -2,7 +2,7 @@ nav {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(10, 10, 10, 0.92);
+  background: color-mix(in srgb, var(--bg) 92%, transparent);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
   padding: 0 var(--section-px);
@@ -14,8 +14,8 @@ nav {
 
 .nav-logo {
   
-  font-family: 'Lucida Grande', sans-serif;
-  font-weight: 900;
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
   font-size: clamp(26px, 2.5vw, 120px);
   letter-spacing: -0.02em;
   color: var(--text);
@@ -46,5 +46,25 @@ nav {
     gap: 1rem;
 
     a { font-size: 10px; }
+  }
+}
+
+.theme-toggle {
+  background: transparent;
+  border: 1px solid var(--border2);
+  color: var(--muted);
+  width: 36px;
+  height: 36px;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex-shrink: 0;
+
+  &:hover {
+    color: var(--text);
+    border-color: var(--accent);
   }
 }
