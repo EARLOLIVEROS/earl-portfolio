@@ -19,22 +19,22 @@ export class Contact {
   constructor(private contactService: ContactService) {}
 
   onSubmit() {
-    if (this.sending) return;
-    if (!this.form.name || !this.form.email || !this.form.message) return;
+  if (this.sending || this.sent) return;
+  if (!this.form.name || !this.form.email || !this.form.message) return;
 
-    this.sending = true;
-    this.error = false;
+  this.sending = true;
+  this.error = false;
 
-    this.contactService.send(this.form).subscribe({
-      next: () => {
-        this.sent = true;
-        this.sending = false;
-        this.form = { name: '', email: '', message: '' };
-      },
-      error: () => {
-        this.error = true;
-        this.sending = false;
-      }
-    });
-  }
+  this.contactService.send(this.form).subscribe({
+    next: () => {
+      this.sending = false;
+      this.sent = true;
+      this.form = { name: '', email: '', message: '' };
+    },
+    error: () => {
+      this.sending = false;
+      this.error = true;
+    }
+  });
+}
 }
