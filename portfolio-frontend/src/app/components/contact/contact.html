@@ -61,9 +61,10 @@
           @if (error) {
             <p class="error-msg">Something went wrong. Please try again.</p>
           }
-          <button type="submit" class="btn-primary" [disabled]="sending">
+          <button type="submit" class="btn-primary" [disabled]="sending || sent">
             {{ sending ? 'Sending...' : 'Send message' }}
           </button>
+
         </form>
       }
     </div>
@@ -71,6 +72,6 @@
 </section>
 
 <footer>
-  <span>Earl · Portfolio 2026</span>
+  <span>oliverosearljohn · 2026</span>
   <span>Philippines 🇵🇭</span>
 </footer>
