@@ -1,4 +1,4 @@
-import { Component, ChangeDetectorRef } from '@angular/core';
+import { Component, ChangeDetectorRef, OnInit, OnDestroy } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RevealDirective } from '../../directives/reveal';
 import { ContactService, ContactForm } from '../../services/contact';
@@ -10,16 +10,40 @@ import { ContactService, ContactForm } from '../../services/contact';
   templateUrl: './contact.html',
   styleUrl: './contact.scss'
 })
-export class Contact {
+export class Contact implements OnInit, OnDestroy {
   form: ContactForm = { name: '', email: '', message: '' };
   sending = false;
   sent = false;
   error = false;
+  currentTime = '';
+  private clockInterval: any;
 
   constructor(
     private contactService: ContactService,
     private cdr: ChangeDetectorRef
   ) {}
+
+  ngOnInit() {
+    this.updateTime();
+    this.clockInterval = setInterval(() => {
+      this.updateTime();
+      this.cdr.detectChanges();
+    }, 1000);
+  }
+
+  ngOnDestroy() {
+    if (this.clockInterval) clearInterval(this.clockInterval);
+  }
+
+  updateTime() {
+    const now = new Date();
+    this.currentTime = now.toLocaleTimeString('en-PH', {
+      timeZone: 'Asia/Manila',
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: true
+    });
+  }
 
   onSubmit() {
     if (this.sending || this.sent) return;

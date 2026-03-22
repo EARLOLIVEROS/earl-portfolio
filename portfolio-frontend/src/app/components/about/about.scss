@@ -57,7 +57,7 @@ section {
 
 .tag-icon {
     filter: grayscale(0%) brightness(1);
-    drop-shadow: 0 4px 12px rgb(255, 166, 0);
+    text-shadow: 0 4px 12px rgba(41, 40, 37, 0.055);
 }
     span { color: var(--accent); }
   }
@@ -102,7 +102,7 @@ section {
 }
 
 .skill-bar {
-  height: 2px;
+  height: 5px;
   background: var(--border2);
   flex: 1;
   border-radius: 1px;
