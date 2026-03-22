@@ -9,6 +9,8 @@ import { RevealDirective } from '../../directives/reveal';
   styleUrl: './portfolio.scss'
 })
 export class Portfolio {
+  activeTab = 'dev';
+
   works = [
     {
       image: 'project1.jpg',
@@ -16,7 +18,7 @@ export class Portfolio {
       desc: 'Full-stack web app',
       stack: 'Angular + ASP.NET Core',
       accent: '#6c63ff',
-      link: 'https://bookstore-app-kappa-red.vercel.app/'
+      link: 'https://your-chapterone-url.vercel.app'
     },
     {
       image: 'project2.jpg',
@@ -40,7 +42,7 @@ export class Portfolio {
       desc: 'Game development',
       stack: 'The Sandbox Game Maker',
       accent: '#c8b89a',
-      link: ''
+      link: 'https://www.sandbox.game/en/gallery/'
     },
     {
       image: 'project5.jpg',
@@ -52,16 +54,45 @@ export class Portfolio {
     }
   ];
 
-  onImgError(event: Event, accent: string) {
-    const el = event.target as HTMLImageElement;
-    el.style.display = 'none';
-    const thumb = el.closest('.work-thumb') as HTMLElement;
-    if (thumb) {
-      thumb.style.background = accent + '22';
-    }
+  photos = [
+    { image: 'edit1.jpg', title: 'Portrait Retouch', sub: 'Photoshop · Color Grading' },
+    { image: 'edit2.jpg', title: 'Product Shot', sub: 'Lightroom · Background Removal' },
+    { image: 'edit3.jpg', title: 'Landscape Edit', sub: 'Photoshop · Compositing' },
+    { image: 'edit4.jpg', title: 'Event Photography', sub: 'Lightroom · Color Grade' },
+    { image: 'edit5.png', title: 'Event Photography', sub: 'Lightroom · Color Grade' },
+  ];
+
+  currentSlide = 0;
+
+  setTab(tab: string) {
+    this.activeTab = tab;
+  }
+
+  nextSlide() {
+    this.currentSlide = (this.currentSlide + 1) % this.photos.length;
+  }
+
+  prevSlide() {
+    this.currentSlide = (this.currentSlide - 1 + this.photos.length) % this.photos.length;
+  }
+
+  goTo(i: number) {
+    this.currentSlide = i;
   }
 
   openLink(link: string) {
     if (link) window.open(link, '_blank');
+  }
+
+  onImgError(event: Event, accent: string) {
+    const el = event.target as HTMLImageElement;
+    el.style.display = 'none';
+    const thumb = el.closest('.work-thumb') as HTMLElement;
+    if (thumb) thumb.style.background = accent + '22';
+  }
+
+  onSlideImgError(event: Event) {
+    const el = event.target as HTMLImageElement;
+    el.style.display = 'none';
   }
 }

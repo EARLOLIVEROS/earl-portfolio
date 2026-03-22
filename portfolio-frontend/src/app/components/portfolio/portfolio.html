@@ -1,26 +1,59 @@
 <section id="portfolio">
   <div class="section-tag" reveal revealType="fade-up" [revealDelay]="0">Selected work</div>
   <h2 reveal revealType="fade-up" [revealDelay]="100">Portfolio</h2>
-  <div class="portfolio-grid">
-    @for (work of works; track work.title; let i = $index) {
-      <div class="work-card" reveal revealType="stagger" [revealDelay]="i * 100"[revealDelay]="i * 100"
-  [class.has-link]="work.link"
-  (click)="openLink(work.link)">
-        <div class="work-thumb">
-          <img
-            [src]="work.image"
-            [alt]="work.title"
-            class="work-img"
-            (error)="onImgError($event, work.accent)"
-          />
-          <div class="work-overlay" [style.background]="work.accent + '22'"></div>
-          <div class="work-stack-badge">{{ work.stack }}</div>
-        </div>
-        <div class="work-info">
-          <div class="work-title">{{ work.title }}</div>
-          <div class="work-sub">{{ work.desc }}</div>
-        </div>
-      </div>
-    }
+
+  <div class="tabs" reveal revealType="fade-up" [revealDelay]="200">
+    <button class="tab-btn" [class.active]="activeTab === 'dev'" (click)="setTab('dev')">Web & Dev</button>
+    <button class="tab-btn" [class.active]="activeTab === 'photos'" (click)="setTab('photos')">Photo Edits</button>
   </div>
+
+  @if (activeTab === 'dev') {
+    <div class="portfolio-grid">
+      @for (work of works; track work.title; let i = $index) {
+        <div class="work-card" reveal revealType="stagger" [revealDelay]="i * 100"
+          [class.has-link]="work.link" (click)="openLink(work.link)">
+          <div class="work-thumb">
+            <img [src]="work.image" [alt]="work.title" class="work-img"
+              (error)="onImgError($event, work.accent)" />
+            <div class="work-overlay" [style.background]="work.accent + '22'"></div>
+            <div class="work-stack-badge">{{ work.stack }}</div>
+          </div>
+          <div class="work-info">
+            <div class="work-title">{{ work.title }}</div>
+            <div class="work-sub">{{ work.desc }}</div>
+          </div>
+        </div>
+      }
+    </div>
+  }
+
+  @if (activeTab === 'photos') {
+    <div class="carousel" reveal revealType="fade-up" [revealDelay]="0">
+      <div class="carousel-track">
+        @for (photo of photos; track photo.title; let i = $index) {
+          <div class="carousel-slide" [class.active]="i === currentSlide">
+            <div class="slide-img-wrapper">
+              <img [src]="photo.image" [alt]="photo.title" class="slide-img"
+                (error)="onSlideImgError($event)" />
+            </div>
+            <div class="slide-caption">
+              <div class="slide-caption-title">{{ photo.title }}</div>
+              <div class="slide-caption-sub">{{ photo.sub }}</div>
+            </div>
+          </div>
+        }
+      </div>
+
+      <div class="carousel-controls">
+        <button class="carousel-btn" (click)="prevSlide()">&#8592;</button>
+        <div class="carousel-dots">
+          @for (photo of photos; track photo.title; let i = $index) {
+            <div class="dot" [class.active]="i === currentSlide" (click)="goTo(i)"></div>
+          }
+        </div>
+        <button class="carousel-btn" (click)="nextSlide()">&#8594;</button>
+      </div>
+      <div class="slide-counter">{{ currentSlide + 1 }} / {{ photos.length }}</div>
+    </div>
+  }
 </section>
