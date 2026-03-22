@@ -55,11 +55,11 @@ export class Portfolio {
   ];
 
   photos = [
-    { image: 'edit1.jpg', title: 'Portrait Retouch', sub: 'Photoshop · Color Grading' },
-    { image: 'edit2.jpg', title: 'Product Shot', sub: 'Lightroom · Background Removal' },
-    { image: 'edit3.jpg', title: 'Landscape Edit', sub: 'Photoshop · Compositing' },
-    { image: 'edit4.jpg', title: 'Event Photography', sub: 'Lightroom · Color Grade' },
-    { image: 'edit5.png', title: 'Event Photography', sub: 'Lightroom · Color Grade' },
+    { image: 'edit1.jpg', title: 'Portrait Retouch', sub: 'Lightroom · Color Grading' },
+    { image: 'edit2.jpg', title: 'Portrait Retouch', sub: 'Lightroom · Color Grading' },
+    { image: 'edit3.jpg', title: 'Portrait Retouch', sub: 'Lightroom · Color Grade' },
+    { image: 'edit4.jpg', title: 'Portrait Retouch', sub: 'Lightroom · Color Grade' },
+    { image: 'edit5.png', title: 'Online Shop Logo', sub: 'Canva Photo Edit' },
   ];
 
   currentSlide = 0;
@@ -94,5 +94,25 @@ export class Portfolio {
   onSlideImgError(event: Event) {
     const el = event.target as HTMLImageElement;
     el.style.display = 'none';
+  }
+
+  private touchStartX = 0;
+  private touchEndX = 0;
+
+  onTouchStart(event: TouchEvent) {
+    this.touchStartX = event.changedTouches[0].screenX;
+  }
+
+  onTouchEnd(event: TouchEvent) {
+    this.touchEndX = event.changedTouches[0].screenX;
+    const diff = this.touchStartX - this.touchEndX;
+
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) {
+        this.nextSlide();
+      } else {
+        this.prevSlide();
+      }
+    }
   }
 }

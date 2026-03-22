@@ -29,19 +29,36 @@
 
   @if (activeTab === 'photos') {
     <div class="carousel" reveal revealType="fade-up" [revealDelay]="0">
-      <div class="carousel-track">
-        @for (photo of photos; track photo.title; let i = $index) {
-          <div class="carousel-slide" [class.active]="i === currentSlide">
-            <div class="slide-img-wrapper">
-              <img [src]="photo.image" [alt]="photo.title" class="slide-img"
-                (error)="onSlideImgError($event)" />
-            </div>
-            <div class="slide-caption">
-              <div class="slide-caption-title">{{ photo.title }}</div>
-              <div class="slide-caption-sub">{{ photo.sub }}</div>
-            </div>
+      <div class="carousel-track"
+        (touchstart)="onTouchStart($event)"
+        (touchend)="onTouchEnd($event)">
+        <div class="slide-wrapper side prev" (click)="prevSlide()">
+          <div class="slide-img-wrapper">
+            <img [src]="photos[(currentSlide - 1 + photos.length) % photos.length].image"
+              [alt]="photos[(currentSlide - 1 + photos.length) % photos.length].title"
+              class="slide-img" (error)="onSlideImgError($event)" />
           </div>
-        }
+        </div>
+
+        <div class="slide-wrapper center">
+          <div class="slide-img-wrapper">
+            <img [src]="photos[currentSlide].image"
+              [alt]="photos[currentSlide].title"
+              class="slide-img" (error)="onSlideImgError($event)" />
+          </div>
+          <div class="slide-caption">
+            <div class="slide-caption-title">{{ photos[currentSlide].title }}</div>
+            <div class="slide-caption-sub">{{ photos[currentSlide].sub }}</div>
+          </div>
+        </div>
+
+        <div class="slide-wrapper side next" (click)="nextSlide()">
+          <div class="slide-img-wrapper">
+            <img [src]="photos[(currentSlide + 1) % photos.length].image"
+              [alt]="photos[(currentSlide + 1) % photos.length].title"
+              class="slide-img" (error)="onSlideImgError($event)" />
+          </div>
+        </div>
       </div>
 
       <div class="carousel-controls">
