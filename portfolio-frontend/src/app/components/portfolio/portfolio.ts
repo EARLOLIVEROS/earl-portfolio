@@ -51,6 +51,14 @@ export class Portfolio {
       stack: 'Fruits & Vegetables',
       accent: '#639922',
       link: 'https://extraordinary-biscotti-c2e1bf.netlify.app/'
+    },
+    {
+      image: 'project6.jpg',
+      title: 'Aileen Gel Blaster Store Website',
+      desc: 'E-commerce platform',
+      stack: 'Gel Blaster Gun',
+      accent: '#639922',
+      link: 'https://aileen-gel-blaster.vercel.app/'
     }
   ];
 
