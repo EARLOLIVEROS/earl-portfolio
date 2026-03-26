@@ -18,7 +18,7 @@ export class Portfolio {
       desc: 'Full-stack web app',
       stack: 'Angular + ASP.NET Core',
       accent: '#6c63ff',
-      link: 'https://your-chapterone-url.vercel.app'
+      link: 'https://bookstore-app-kappa-red.vercel.app/'
     },
     {
       image: 'project2.jpg',
