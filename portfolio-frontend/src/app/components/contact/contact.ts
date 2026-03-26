@@ -1,5 +1,6 @@
 import { Component, ChangeDetectorRef, OnInit, OnDestroy } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { RevealDirective } from '../../directives/reveal';
 import { ContactService, ContactForm } from '../../services/contact';
 
@@ -18,9 +19,16 @@ export class Contact implements OnInit, OnDestroy {
   currentTime = '';
   private clockInterval: any;
 
+  // CV Modal
+  cvOpen = false;
+  // Update this path to wherever your CV PDF is stored in your assets folder
+  cvUrl = 'EarlJohnOliveros_CV.pdf';
+  cvSafeUrl!: SafeResourceUrl;
+
   constructor(
     private contactService: ContactService,
-    private cdr: ChangeDetectorRef
+    private cdr: ChangeDetectorRef,
+    private sanitizer: DomSanitizer
   ) {}
 
   ngOnInit() {
@@ -29,6 +37,8 @@ export class Contact implements OnInit, OnDestroy {
       this.updateTime();
       this.cdr.detectChanges();
     }, 1000);
+
+    this.cvSafeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.cvUrl);
   }
 
   ngOnDestroy() {
@@ -43,6 +53,16 @@ export class Contact implements OnInit, OnDestroy {
       minute: '2-digit',
       hour12: true
     });
+  }
+
+  openCv() {
+    this.cvOpen = true;
+    document.body.style.overflow = 'hidden';
+  }
+
+  closeCv() {
+    this.cvOpen = false;
+    document.body.style.overflow = '';
   }
 
   onSubmit() {

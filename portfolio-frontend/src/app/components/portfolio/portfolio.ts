@@ -68,6 +68,9 @@ export class Portfolio {
     { image: 'edit3.jpg', title: 'Portrait Retouch', sub: 'Lightroom · Color Grade' },
     { image: 'edit4.jpg', title: 'Portrait Retouch', sub: 'Lightroom · Color Grade' },
     { image: 'edit5.png', title: 'Online Shop Logo', sub: 'Canva Photo Edit' },
+    { image: '1.jpg', title: 'Product Advertisment', sub: 'Canva Photo Edit' },
+    { image: '2.jpg', title: 'Product Advertisment', sub: 'Canva Photo Edit' },
+    { image: '3.jpg', title: 'Product Advertisment', sub: 'Canva Photo Edit' },
   ];
 
   currentSlide = 0;

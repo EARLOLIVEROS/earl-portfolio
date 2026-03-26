@@ -53,6 +53,39 @@ section {
   margin-bottom: 2px;
 }
 
+// View CV Button
+.btn-view-cv {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 2rem;
+  padding: 10px 20px;
+  font-size: clamp(11px, 1vw, 13px);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--bg2);
+  background: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+
+  .btn-cv-icon {
+    font-size: 14px;
+    transition: transform 0.2s;
+  }
+
+  &:hover {
+    opacity: 0.85;
+
+    .btn-cv-icon {
+      transform: translate(2px, -2px);
+    }
+  }
+}
+
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -103,6 +136,119 @@ section {
 .error-msg {
   font-size: 12px;
   color: #e06c6c;
+}
+
+// CV Modal
+.cv-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  animation: fadeIn 0.2s ease;
+}
+
+.cv-modal {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  width: 100%;
+  max-width: 860px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  animation: scaleIn 0.2s ease;
+  overflow: hidden;
+}
+
+.cv-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+  gap: 12px;
+}
+
+.cv-modal-title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(13px, 1.1vw, 15px);
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.02em;
+}
+
+.cv-modal-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-download-cv {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 16px;
+  font-size: 12px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--bg2);
+  background: var(--accent);
+  border-radius: 2px;
+  text-decoration: none;
+  transition: opacity 0.2s;
+
+  &:hover { opacity: 0.85; }
+}
+
+.cv-close-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  width: 32px;
+  height: 32px;
+  border-radius: 2px;
+  font-size: 13px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s, border-color 0.2s;
+
+  &:hover {
+    color: var(--text);
+    border-color: var(--text);
+  }
+}
+
+.cv-modal-body {
+  flex: 1;
+  overflow: hidden;
+
+  iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 70vh;
+    display: block;
+    border: none;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.97); }
+  to   { opacity: 1; transform: scale(1); }
 }
 
 footer {

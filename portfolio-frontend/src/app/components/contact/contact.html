@@ -30,6 +30,10 @@
           </div>
         </a>
       </div>
+
+      <button class="btn-view-cv" (click)="openCv()">
+        <span class="btn-cv-icon">↗</span> View CV
+      </button>
     </div>
     <div class="contact-right" reveal revealType="slide-right" [revealDelay]="200">
        <div class="form-header">
@@ -68,12 +72,31 @@
           <button type="submit" class="btn-primary" [disabled]="sending || sent">
             {{ sending ? 'Sending...' : 'Send message' }}
           </button>
-
         </form>
       }
     </div>
   </div>
 </section>
+
+<!-- CV Modal -->
+@if (cvOpen) {
+  <div class="cv-overlay" (click)="closeCv()">
+    <div class="cv-modal" (click)="$event.stopPropagation()">
+      <div class="cv-modal-header">
+        <span class="cv-modal-title">Earl John Oliveros — CV</span>
+        <div class="cv-modal-actions">
+          <a class="btn-download-cv" [href]="cvUrl" download="EarlJohnOliveros_CV.pdf">
+            ↓ Download CV
+          </a>
+          <button class="cv-close-btn" (click)="closeCv()">✕</button>
+        </div>
+      </div>
+      <div class="cv-modal-body">
+        <iframe [src]="cvSafeUrl" frameborder="0"></iframe>
+      </div>
+    </div>
+  </div>
+}
 
 <footer>
   <span class="footer-logo">EARL<span>.</span></span>
