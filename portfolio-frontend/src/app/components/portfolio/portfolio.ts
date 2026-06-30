@@ -79,6 +79,8 @@ export class Portfolio {
     { image: '1.jpg', title: 'Product Advertisment', sub: 'Canva Photo Edit' },
     { image: '2.jpg', title: 'Product Advertisment', sub: 'Canva Photo Edit' },
     { image: '3.jpg', title: 'Product Advertisment', sub: 'Canva Photo Edit' },
+    { image: 'edit5.jpg', title: 'Poster', sub: 'Canva · Content Creation' },
+    { image: 'edit6.png', title: 'Poster', sub: 'Canva · Content Creation' },
   ];
 
   currentSlide = 0;
