@@ -59,6 +59,14 @@ export class Portfolio {
       stack: 'Gel Blaster Gun',
       accent: '#639922',
       link: 'https://aileen-gel-blaster.vercel.app/'
+    },
+    {
+      image: 'project7.png',
+      title: 'StarTix Ticketing Website',
+      desc: 'E-commerce platform',
+      stack: 'Ticketing Website',
+      accent: '#11b39d',
+      link: 'https://star-tix-delta.vercel.app/'
     }
   ];
 
