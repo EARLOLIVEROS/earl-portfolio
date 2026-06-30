@@ -20,7 +20,12 @@ public class ContactController : ControllerBase
             string.IsNullOrWhiteSpace(msg.Message))
             return BadRequest(new { error = "All fields are required." });
 
-        await _email.SendAsync(msg.Name, msg.Email, msg.Message);
+        var response = await _email.SendAsync(msg.Name, msg.Email, msg.Message);
+        var body = await response.Body.ReadAsStringAsync();
+
+        if ((int)response.StatusCode >= 400)
+            return StatusCode((int)response.StatusCode, new { error = body });
+
         return Ok(new { success = true, message = "Message sent successfully!" });
     }
 }

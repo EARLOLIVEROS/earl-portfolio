@@ -8,7 +8,7 @@ public class EmailService
     private readonly IConfiguration _config;
     public EmailService(IConfiguration config) => _config = config;
 
-    public async Task SendAsync(string fromName, string fromEmail, string message)
+    public async Task<SendGrid.Response> SendAsync(string fromName, string fromEmail, string message)
     {
         var client = new SendGridClient(_config["SendGrid:ApiKey"]);
         var msg = new SendGridMessage
@@ -18,6 +18,6 @@ public class EmailService
             PlainTextContent = $"From: {fromName} <{fromEmail}>\n\n{message}"
         };
         msg.AddTo(new EmailAddress(_config["SendGrid:To"] ?? ""));
-        await client.SendEmailAsync(msg);
+        return await client.SendEmailAsync(msg);
     }
 }
