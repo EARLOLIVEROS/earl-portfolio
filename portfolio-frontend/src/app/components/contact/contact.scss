@@ -308,3 +308,23 @@ footer {
   font-size: 14px;
   color: var(--muted);
 }
+
+.btn-view-cv {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-cv-icon {
+  transition: transform 0.2s ease;
+}
+
+.btn-view-cv:hover .btn-cv-icon {
+  transform: translate(2px, -2px);
+}
+
+.btn-download-cv {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
